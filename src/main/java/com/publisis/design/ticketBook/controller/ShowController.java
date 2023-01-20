@@ -4,6 +4,7 @@ import com.publisis.design.ticketBook.model.Show;
 import com.publisis.design.ticketBook.service.ShowService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -20,5 +21,11 @@ public class ShowController {
     public List<Show> getShowsByTheater(Long theaterId) {
         return showService.getShowsByTheaterId(theaterId);
     }
+
+    @GetMapping("/movie/{movie_name}")
+    public List<Show> getShowsByTheater(@PathVariable(value = "movie_name") String movieName) {
+        return showService.getShowsByMovie(movieName);
+    }
+
 
 }

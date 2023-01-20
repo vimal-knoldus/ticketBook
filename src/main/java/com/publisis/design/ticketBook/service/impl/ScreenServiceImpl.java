@@ -22,8 +22,9 @@ public class ScreenServiceImpl implements ScreenService {
 
     @Override
     public List<Movie> getMovieByTheaterId(Long id) {
-        List<Screen> screens = screenRepository.findByTheaterId(id);
+        /*List<Screen> screens = screenRepository.findByTheaterId(id);
         List<Long> movieList = screens.stream().map(Screen::getMovieId).collect(Collectors.toList());
-        return movieList.stream().map(x -> movieRepository.findById(x).orElse(null)).collect(Collectors.toList());
+        return movieList.stream().map(x -> movieRepository.findById(x).orElse(null)).collect(Collectors.toList());*/
+        return null;
     }
 }
